@@ -75,7 +75,7 @@ This ensures responsible AI usage and prevents misleading financial decisions.
 
 ---
 
-## 🗣️ Vernacular Financial Explanations
+##  Vernacular Financial Explanations
 
 Instead of complex banking terminology, Vachan explains outcomes in simple, user-friendly language.
 
