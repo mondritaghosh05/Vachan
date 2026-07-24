@@ -1,55 +1,52 @@
-import { useState } from "react";
+import SpeechRecognition, {
+  useSpeechRecognition,
+} from "react-speech-recognition";
+
+import { FaMicrophone } from "react-icons/fa";
 
 function PromptInput({ prompt, setPrompt }) {
-  const [isListening, setIsListening] = useState(false);
 
-  const startVoiceInput = () => {
-    const SpeechRecognition =
-      window.SpeechRecognition || window.webkitSpeechRecognition;
+  const {
+    transcript,
+    listening,
+    resetTranscript,
+    browserSupportsSpeechRecognition,
+  } = useSpeechRecognition();
 
-    if (!SpeechRecognition) {
-      alert("Speech Recognition is not supported in this browser.");
-      return;
-    }
+  const startListening = () => {
+    resetTranscript();
 
-    const recognition = new SpeechRecognition();
-
-    recognition.lang = "en-US";
-    recognition.interimResults = false;
-    recognition.maxAlternatives = 1;
-
-    setIsListening(true);
-
-    recognition.start();
-
-    recognition.onresult = (event) => {
-      setPrompt(event.results[0][0].transcript);
-    };
-
-    recognition.onerror = () => {
-      setIsListening(false);
-      alert("Couldn't recognize speech.");
-    };
-
-    recognition.onend = () => {
-      setIsListening(false);
-    };
+    SpeechRecognition.startListening({
+      continuous: false,
+      language: "en-IN",
+    });
   };
 
+  if (transcript && transcript !== prompt) {
+    setPrompt(transcript);
+  }
+
+  if (!browserSupportsSpeechRecognition) {
+    return <p>Speech recognition unavailable.</p>;
+  }
+
   return (
-    <div>
-      <h2>Ask a Question</h2>
+    <div className="prompt-input">
 
       <textarea
-        rows="5"
-        placeholder="Example: Explain this agreement in simple language..."
         value={prompt}
         onChange={(e) => setPrompt(e.target.value)}
+        placeholder="Ask something about your document..."
       />
 
-      <button onClick={startVoiceInput} disabled={isListening}>
-        {isListening ? "🔴 Listening..." : "🎤 Voice Input"}
+      <button
+        className="mic-btn"
+        onClick={startListening}
+      >
+        <FaMicrophone />
+        {listening ? "Listening..." : "Speak"}
       </button>
+
     </div>
   );
 }

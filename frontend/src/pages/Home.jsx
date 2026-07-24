@@ -7,6 +7,8 @@ import AnalyzeButton from "../components/AnalyzeButton";
 import LoadingSpinner from "../components/LoadingSpinner";
 import ResponseCard from "../components/ResponseCard";
 
+import { analyzeDocument } from "../services/api";
+
 function Home() {
   const [file, setFile] = useState(null);
   const [prompt, setPrompt] = useState("");
@@ -16,6 +18,7 @@ function Home() {
 
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
+  const [error, setError] = useState(null);
 
   const handleAnalyze = async () => {
     if (!file) {
@@ -29,54 +32,46 @@ function Home() {
     }
 
     setLoading(true);
+    setError(null);
 
-    // Temporary mock response
-    setTimeout(() => {
+    try {
+      const data = await analyzeDocument({ file, prompt, language, detail });
+
+      // Maps FastAPI response to ResponseCard structure
       setResult({
         documentName: file.name,
-        confidenceScore: 92,
-        confidenceLevel: "HIGH",
-
-        briefSummary:
-          "This is a temporary frontend response.",
-
-        detailedSummary:
-          "Once the backend is connected, this section will display the AI-generated explanation.",
-
+        confidenceScore: data.confidence_score ?? 90,
+        confidenceLevel: data.confidence_level ?? "HIGH",
+        briefSummary: data.summary || data.brief_summary || "Analysis complete.",
+        detailedSummary: data.explanation || data.detailed_summary || "",
         keyDetails: [
           { label: "Language", value: language },
-          { label: "Explanation", value: detail },
+          { label: "Detail Level", value: detail },
           { label: "Prompt", value: prompt },
         ],
       });
-
+    } catch (err) {
+      console.error("API Call Error:", err);
+      setError(err.message || "Failed to connect to backend server.");
+    } finally {
       setLoading(false);
-    }, 2000);
+    }
   };
 
   return (
     <div className="app">
       <header>
         <h1>VACHAN</h1>
-        <p>
-          AI-powered multilingual legal & policy document assistant
-        </p>
+        <p>AI-powered multilingual legal & policy document assistant</p>
       </header>
 
       <main className="main-container">
-
         <section className="upload-card">
-          <DocumentUploader
-            file={file}
-            setFile={setFile}
-          />
+          <DocumentUploader file={file} setFile={setFile} />
         </section>
 
         <section className="prompt-card">
-          <PromptInput
-            prompt={prompt}
-            setPrompt={setPrompt}
-          />
+          <PromptInput prompt={prompt} setPrompt={setPrompt} />
         </section>
 
         <Controls
@@ -86,15 +81,17 @@ function Home() {
           setDetail={setDetail}
         />
 
-        <AnalyzeButton
-          loading={loading}
-          onAnalyze={handleAnalyze}
-        />
+        <AnalyzeButton loading={loading} onAnalyze={handleAnalyze} />
+
+        {error && (
+          <div className="error-message" style={{ color: "#ff4d4f", margin: "1rem 0", textAlign: "center" }}>
+            {error}
+          </div>
+        )}
 
         {loading && <LoadingSpinner />}
 
-        <ResponseCard result={result} />
-
+        {!loading && <ResponseCard result={result} />}
       </main>
     </div>
   );

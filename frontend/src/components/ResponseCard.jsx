@@ -1,37 +1,48 @@
-function ResponseCard({ result }) {
+import { FaVolumeUp } from "react-icons/fa";
 
+function ResponseCard({ result }) {
   if (!result) return null;
 
+  const speak = () => {
+    if (!window.speechSynthesis) {
+      alert("Speech Synthesis not supported.");
+      return;
+    }
+
+    const utterance = new SpeechSynthesisUtterance(
+      result.detailedSummary || result.briefSummary
+    );
+
+    utterance.rate = 1;
+    utterance.pitch = 1;
+
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utterance);
+  };
+
   return (
-    <section className="upload-card">
+    <div className="response-card">
 
       <h2>Analysis Result</h2>
 
       <h3>{result.documentName}</h3>
 
-      <p>
-        <strong>Confidence:</strong>{" "}
-        {result.confidenceScore}%
-      </p>
+      <p><strong>Confidence:</strong> {result.confidenceScore}%</p>
 
       <p>
         <strong>Level:</strong>{" "}
-        {result.confidenceLevel}
+        <span className={result.confidenceLevel.toLowerCase()}>
+          {result.confidenceLevel}
+        </span>
       </p>
-
-      <br />
 
       <h3>Summary</h3>
 
       <p>{result.briefSummary}</p>
 
-      <br />
-
       <h3>Detailed Explanation</h3>
 
       <p>{result.detailedSummary}</p>
-
-      <br />
 
       <h3>Key Details</h3>
 
@@ -43,13 +54,12 @@ function ResponseCard({ result }) {
         ))}
       </ul>
 
-      <br />
-
-      <button>
-        🔊 Read Aloud
+      <button className="read-btn" onClick={speak}>
+        <FaVolumeUp />
+        Read Aloud
       </button>
 
-    </section>
+    </div>
   );
 }
 
