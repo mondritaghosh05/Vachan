@@ -19,6 +19,11 @@ Vachan bridges this accessibility gap by allowing users to **speak, type, or upl
 
 The goal is to make legal and financial information more understandable, accessible, and actionable for everyone.
 
+## Model Training Notebook
+
+The model was trained on Kaggle:
+[View Kaggle Notebook](https://www.kaggle.com/code/mondritaghosh/vachan-gemma4-e4b)
+
 ---
 
 # Key Features
