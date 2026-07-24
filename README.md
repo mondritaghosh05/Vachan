@@ -45,7 +45,7 @@ Once the model is downloaded:
 
 ---
 
-## 🤖 AI-Powered Eligibility Prediction
+##  AI-Powered Eligibility Prediction
 
 The assistant uses a trained machine learning classifier to evaluate user information against financial eligibility criteria.
 
