@@ -1,0 +1,101 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:#eef3fa;
+  color:#222;
+}
+
+.app{
+  max-width:900px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+header{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+header h1{
+  font-size:3rem;
+  color:#2563eb;
+}
+
+header p{
+  margin-top:10px;
+  color:#666;
+}
+
+.main-container{
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+}
+
+.upload-card,
+.prompt-card,
+.controls-card{
+  background:white;
+  border-radius:12px;
+  padding:25px;
+  box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.upload-box{
+  border:2px dashed #2563eb;
+  border-radius:10px;
+  padding:40px;
+  text-align:center;
+  margin-top:15px;
+}
+
+.upload-box button,
+.prompt-card button,
+.analyze-btn{
+  margin-top:15px;
+  padding:12px 22px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background:#2563eb;
+  color:white;
+  font-size:16px;
+}
+
+textarea{
+  width:100%;
+  margin-top:15px;
+  padding:15px;
+  resize:none;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+.controls-card{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.controls-card div{
+  flex:1;
+}
+
+select{
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+}
+
+.analyze-btn{
+  font-size:18px;
+}
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
