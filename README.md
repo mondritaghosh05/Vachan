@@ -108,5 +108,73 @@ Vachan is specifically built for:
 
 These users often have economic activity but limited access to formal financial systems.
 
+---
 
-# 🏗️ System Architecture
+#  Technology Stack
+
+## Backend
+- Python
+- Machine Learning Classification Pipeline
+- Document Processing / OCR
+- Speech Processing
+- Offline Inference Engine
+
+## Frontend
+- React
+- Modern responsive UI
+- Voice interaction interface
+
+## AI Components
+- Trained eligibility classifier
+- Confidence scoring mechanism
+- Multimodal input processing
+
+---
+
+#  Why Vachan?
+
+Traditional financial systems often assume:
+
+- Stable internet access
+- High digital literacy
+- Formal credit history
+- Ability to understand complex documentation
+
+However, many users outside the formal economy do not fit these assumptions.
+
+Vachan focuses on **real people with real financial activity**, helping them understand opportunities they may already qualify for.
+
+---
+
+#  Future Roadmap
+
+- Support for more Indian languages
+- Integration with additional government schemes
+- Improved handwritten document understanding
+- Personalized financial literacy lessons
+- Human advisor connection for uncertain cases
+- More robust offline edge deployment
+
+---
+
+#  Responsible AI Principles
+
+Vachan follows responsible AI practices:
+
+- No false certainty  
+- Confidence-based recommendations  
+- Human verification encouraged for uncertain cases  
+- Offline-first privacy approach  
+- Designed for accessibility
+
+---
+
+#  Contributors
+
+Built with the goal of making financial assistance more accessible, understandable, and inclusive.
+
+---
+
+##  License
+
+This project is developed for educational and innovation purposes.
