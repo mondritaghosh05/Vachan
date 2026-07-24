@@ -1,112 +1,164 @@
-#  Vachan — Offline Voice-First Financial Eligibility Assistant
+# Vachan — Offline Voice-First Legal & Financial Assistance Assistant
 
-> **Empowering India's informal workforce with accessible, explainable financial guidance — anytime, anywhere.**
+> **Empowering India's underserved communities with accessible, explainable legal and financial guidance — anytime, anywhere.**
 
-##  Overview
+## Overview
 
-**Vachan** is a voice-first, offline financial literacy and eligibility assistant designed for India's informal workforce — including gig workers, small vendors, rural entrepreneurs, and individuals who have real economic activity but lack formal credit histories.
+**Vachan** is a voice-first, offline legal and financial assistance assistant designed for India's informal workforce, rural communities, small business owners, and individuals who often struggle to navigate complex government, banking, and legal documentation.
 
-Millions of people generate income and maintain transaction records, yet struggle to access financial schemes and credit due to:
+Millions of people interact with important legal and financial documents — including loan applications, government scheme forms, agreements, notices, and official paperwork — but face challenges due to:
 
-- Limited digital literacy
-- Complex financial documentation
-- Lack of formal credit scores
-- Poor internet connectivity
-- Language barriers
+* Complex legal and financial terminology
+* Limited digital literacy
+* Language barriers
+* Difficulty understanding official documents
+* Lack of access to professional guidance
+* Poor internet connectivity in remote areas
 
-Vachan bridges this gap by allowing users to **speak, type, or upload financial documents**, analyze their information locally, determine eligibility using machine learning, and explain the result in simple, accessible language.
+Vachan bridges this accessibility gap by allowing users to **speak, type, or upload documents**, understand their contents through AI-powered analysis, translate them into regional languages, and receive simplified explanations and assistance with form-related processes.
+
+The goal is to make legal and financial information more understandable, accessible, and actionable for everyone.
 
 ---
 
-#  Key Features
+# Key Features
 
-##  Multimodal Financial Assistance
+## Multimodal Document Assistance
 
 Users can interact naturally through:
 
-- **Voice input** — for users who prefer speaking over typing
-- **Text input** — for digitally comfortable users
-- **Document images** — upload loan forms, government scheme documents, or handwritten financial records
+* **Voice input** — for users who prefer speaking over typing
+* **Text input** — for digitally comfortable users
+* **Document images** — upload legal notices, government forms, loan documents, agreements, or handwritten records
 
-The system extracts relevant financial information and processes it through an eligibility pipeline.
+The system extracts relevant information, identifies key sections, and provides simplified explanations.
 
 ---
 
-##  Fully Offline Capability
+## Vernacular Legal Translation & Simplification
+
+Legal and financial documents are often difficult to understand due to technical language and unfamiliar terminology.
+
+Vachan helps users by:
+
+* Translating documents into regional languages
+* Explaining complex legal clauses in simple words
+* Highlighting important points, deadlines, and required actions
+* Making official paperwork easier to understand
+
+Instead of replacing legal professionals, Vachan acts as an accessibility layer that helps individuals better understand their documents before taking action.
+
+---
+
+## Form Understanding & Filling Assistance
+
+Many users struggle with lengthy and confusing government or financial forms.
+
+Vachan assists by:
+
+* Explaining the purpose of each field
+* Guiding users on what information is required
+* Identifying missing details
+* Helping users complete forms correctly
+* Reducing errors during submission
+
+This enables users to independently navigate important documentation processes.
+
+---
+
+## Fully Offline Capability
 
 Vachan is designed for environments with unreliable connectivity.
 
-Once the model is downloaded:
+Once the required models are downloaded:
 
-- No cloud LLM dependency  
-- No continuous internet requirement  
-- Data stays on-device  
-- Works in low-connectivity regions
-
----
-
-##  AI-Powered Eligibility Prediction
-
-The assistant uses a trained machine learning classifier to evaluate user information against financial eligibility criteria.
-
-The system considers factors such as:
-
-- Income patterns
-- Transaction history
-- Employment type
-- Financial documentation
-- User-provided information
+* No cloud AI dependency
+* No continuous internet requirement
+* User documents remain private and secure
+* Works in low-connectivity regions
 
 ---
 
-##  Confidence-Aware AI Responses
+## AI-Powered Document Intelligence
 
-Vachan does not present predictions as absolute truths.
+The system uses AI models to analyze documents, extract meaningful information, and provide personalized guidance.
 
-Every recommendation includes a confidence indicator:
+Vachan can assist with:
 
-| Indicator | Meaning |
-|---|---|
-| 🟢 High Confidence | Strong match with available criteria |
-| 🟡 Medium Confidence | Possible eligibility, but additional verification may help |
-| 🔴 Low Confidence | Insufficient evidence — consult a human advisor |
-
-This ensures responsible AI usage and prevents misleading financial decisions.
+* Legal document interpretation
+* Government scheme paperwork
+* Loan and financial applications
+* Eligibility-related information
+* Documentation requirements
 
 ---
 
-##  Vernacular Financial Explanations
+## Responsible & Confidence-Aware Responses
 
-Instead of complex banking terminology, Vachan explains outcomes in simple, user-friendly language.
+Vachan provides guidance while maintaining transparency about AI limitations.
 
-Example:
+Every response includes confidence awareness:
 
-> "Based on your income and transaction history, you may qualify for this scheme. You should verify your documents before applying."
+| Indicator         | Meaning                                                                  |
+| ----------------- | ------------------------------------------------------------------------ |
+|🟢 High Confidence   | Information strongly supported by the available document/context         |
+|🟡 Medium Confidence | Possible interpretation; additional verification may be useful           |
+|🔴 Low Confidence    | Limited information available — professional guidance may be recommended |
 
-The goal is not just prediction — but **financial understanding**.
+This ensures users receive helpful assistance without being misled into making critical decisions solely based on AI output.
 
 ---
 
-#  Target Users
+## Accessible Vernacular Communication
 
-Vachan is specifically built for:
+Vachan focuses on making complex information understandable for everyone.
 
-###  Gig Workers
-- Delivery partners
-- Freelancers
-- Independent workers
+Instead of presenting complicated legal or financial terminology, it provides:
 
-###  Small Vendors
-- Street vendors
-- Local shop owners
-- Micro-business operators
+* Simple explanations
+* Regional language support
+* Voice-based guidance
+* Context-aware assistance
 
-###  Rural Users
-- Farmers
-- Self-employed individuals
-- Informal workers
+The mission is not only to process documents, but to empower people with better understanding and confidence.
 
-These users often have economic activity but limited access to formal financial systems.
+---
+
+# Target Users
+
+Vachan is built for communities that frequently interact with complex paperwork but lack easy access to assistance.
+
+## Gig Workers & Informal Workers
+
+* Delivery partners
+* Freelancers
+* Independent workers
+
+## Small Vendors & Entrepreneurs
+
+* Street vendors
+* Local shop owners
+* Micro-business operators
+
+## Rural Communities
+
+* Farmers
+* Self-employed individuals
+* Rural entrepreneurs
+
+## General Citizens
+
+* Individuals handling government forms
+* People dealing with legal notices and agreements
+* Users requiring document translation and explanation
+
+---
+
+# Vision
+
+Vachan aims to democratize access to legal and financial knowledge by transforming complicated documents into understandable information.
+
+By combining **voice interaction, AI-powered document intelligence, vernacular translation, and offline accessibility**, Vachan helps bridge the gap between citizens and essential legal and financial systems.
 
 ---
 
